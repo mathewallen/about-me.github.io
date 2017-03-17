@@ -1,3 +1,69 @@
-Goodbye World
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mathew Allen - Designer</title>
+<style>
+body {
+  background: #f1f1f1;
+  color: #222;
+  font-family: 'Open Sans', sans-serif;
+}
 
-<div> dfsd </div>
+.wrapper {
+  padding: 100px;
+  width: 500px;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.roles {
+    font-size: 30px;
+    height: 50px;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.roles div {
+    height: 50px;
+    transition: margin-top 1s ease-in-out;
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="roles">
+      <div>
+          I am a designer.
+      </div>
+
+      <div>
+          I am a father.
+      </div>
+
+      <div>
+          I am a lazy.
+      </div>
+
+      <div>
+          I defunct.
+      </div>
+  </div>
+</div>
+<script>
+var current = 1; //keeps track of the current div
+var height = $('.roles').height(); //the height of the roles div
+var numberDivs = $('.roles').children().length; //the number of children of the roles div
+var first = $('.roles div:nth-child(1)'); //the first div nested in roles div
+setInterval(function() {
+    var number = current * -height;
+    first.css('margin-top', number + 'px');
+    if (current === numberDivs) {
+        first.css('margin-top', '0px');
+        current = 1;
+    } else current++;
+}, 2000);
+</script>
+</body>
+</html>
